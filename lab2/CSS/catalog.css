@@ -1,0 +1,172 @@
+.hero-catalog {
+    background-image: url('../Images/banner-catalog.jpg');
+    /* замените на изображение на весь экран */
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+
+}
+
+.hero-catalog-text {
+    margin: 3%;
+}
+
+.hero-catalog-text h2 {
+    font-size: 60px;
+}
+
+/* Стили для карточек автомобилей */
+.catalog {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.catalog h2 {
+    margin: 40px;
+    font-size: 40px;
+}
+
+.car-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.car-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.car-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Стили для таблицы характеристик */
+.car-specs {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+.car-specs th,
+.car-specs td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.car-specs th {
+    background-color: #333;
+    color: #fff;
+}
+
+.car-specs td {
+    background-color: #f9f9f9;
+}
+
+
+/* Стили для таблицы характеристик автомобилей */
+.car-specs {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.car-specs th,
+.car-specs td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.car-specs th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* .car-specs tbody tr:nth-child(even) {
+    background-color: #fafafa;
+} */
+
+.car-specs tbody tr:hover {
+    background-color: #e6e6e6;
+}
+
+.car-specs td {
+    font-size: 14px;
+    color: #333;
+}
+
+.car-specs caption {
+    caption-side: top;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-credits {
+        text-align: center;
+    }
+}

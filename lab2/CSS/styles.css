@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Шапка сайта */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #adc1c5;
+
+}
+
+/* Главный баннер */
+.hero {
+    background-image: url('../Images/banner_new.webp'); /* замените на изображение на весь экран */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.hero-text{
+    margin: 3%;
+}
+
+.hero h2 {
+    color: #ffffff;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.gradient{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) -20%, rgba(0, 0, 0, 0));
+    height: 100%;
+    width: 100%;
+}
+
+/* О компании */
+#about {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+
+/* Футер */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo, .footer-links, .footer-contacts, .footer-credits {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-logo img {
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+footer h3{
+    margin-bottom: 3%;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-contacts p,
+.footer-credits p {
+    margin: 5px 0;
+}
+
+.footer-credits {
+    text-align: right;
+}
+
+footer a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-credits {
+        text-align: center;
+    }
+}
