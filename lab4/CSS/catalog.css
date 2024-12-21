@@ -1,6 +1,6 @@
+/* Основные стили для hero секции */
 .hero-catalog {
     background-image: url('../Images/banner-catalog.jpg');
-    /* замените на изображение на весь экран */
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -8,7 +8,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     color: #fff;
-
 }
 
 .hero-catalog-text {
@@ -36,7 +35,7 @@
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
-    max-width: 70%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -44,7 +43,8 @@
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 200px;
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
     padding: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,31 +61,6 @@
 }
 
 /* Стили для таблицы характеристик */
-.car-specs {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    border-collapse: collapse;
-}
-
-.car-specs th,
-.car-specs td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-.car-specs th {
-    background-color: #333;
-    color: #fff;
-}
-
-.car-specs td {
-    background-color: #f9f9f9;
-}
-
-
-/* Стили для таблицы характеристик автомобилей */
 .car-specs {
     width: 100%;
     max-width: 900px;
@@ -112,10 +87,6 @@
     font-size: 16px;
 }
 
-/* .car-specs tbody tr:nth-child(even) {
-    background-color: #fafafa;
-} */
-
 .car-specs tbody tr:hover {
     background-color: #e6e6e6;
 }
@@ -125,16 +96,20 @@
     color: #333;
 }
 
-.car-specs caption {
-    caption-side: top;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .car-card {
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+    }
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
+    .car-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+
     .header-content {
         flex-direction: column;
         align-items: center;
@@ -145,21 +120,14 @@
         gap: 10px;
     }
 
-    .hero h2 {
+    .hero-catalog-text h2 {
         font-size: 28px;
     }
 
-    .hero p {
-        font-size: 18px;
-    }
-
-    .about h2 {
+    .catalog h2 {
         font-size: 24px;
     }
 
-    .about p {
-        font-size: 16px;
-    }
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -168,5 +136,18 @@
 
     .footer-credits {
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .car-specs th,
+    .car-specs td {
+        font-size: 12px;
+        padding: 10px;
     }
 }

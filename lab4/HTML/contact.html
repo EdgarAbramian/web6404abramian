@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АвтоЛидер - Главная</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header>
+
+        <div class="header-content">
+            <a href="index.html"><img src="../images/logo.png" alt="Логотип АвтоЛидер" class="logo"></a>
+            <h1>АвтоЛидер</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="hero-contact">
+        <div class="gradient">
+            <div class="hero-text">
+                <h2>Контакты</h2>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Контакты</h2>
+
+        <div class="contact-info">
+            <div class="contact-details">
+                <h2>Наши контакты</h2>
+                <p><strong>Адрес:</strong> Москва, ул. Ленина, д. 15</p>
+                <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
+                <p><strong>Электронная почта:</strong> info@autolider.ru</p>
+                <p><strong>Часы работы:</strong> Пн-Пт: 9:00 - 19:00, Сб: 10:00 - 16:00</p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Свяжитесь с нами</h2>
+                <form id="contactForm" action="#" method="POST">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш e-mail" required>
+                    <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit">Отправить сообщение</button>
+                </form>
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('contactForm');
+            
+                    // Обработчик отправки формы
+                    form.addEventListener('submit', function (event) {
+                        // Предотвращаем отправку формы по умолчанию
+                        event.preventDefault();
+            
+                        // Получение данных формы
+                        const name = form.name.value.trim();
+                        const email = form.email.value.trim();
+                        const message = form.message.value.trim();
+            
+                        // Проверка данных
+                        let errorMessage = '';
+                        if (!name) {
+                            errorMessage += 'Введите ваше имя.\n';
+                        }
+                        if (!validateEmail(email)) {
+                            errorMessage += 'Введите корректный e-mail.\n';
+                        }
+                        if (!message) {
+                            errorMessage += 'Введите сообщение.\n';
+                        }
+            
+                        if (errorMessage) {
+                            alert(errorMessage);
+                            return;
+                        }
+            
+                        // Если проверки пройдены, отправляем форму
+                        alert('Форма отправлена успешно!');
+            
+                        // Эмуляция отправки данных
+                        console.log('Данные формы:', { name, email, message });
+            
+                        // Можно раскомментировать для настоящей отправки формы
+                        // form.submit();
+                    });
+            
+                    // Функция проверки корректности e-mail
+                    function validateEmail(email) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return emailRegex.test(email);
+                    }
+                });
+            </script>
+            
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Логотип АвтоЛидер">
+                <p>&copy; 2024 АвтоЛидер. Все права защищены.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Контакты</h3>
+                <p>Email: info@autolider.com</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+
+            <div class="footer-credits">
+                <h3>Создатель сайта</h3>
+                <p><a href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

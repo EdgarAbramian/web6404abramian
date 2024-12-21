@@ -1,3 +1,4 @@
+/* Стили для секции "О нас" с использованием CSS Grid */
 .hero-about {
     background-image: url('../Images/banner-about.jpg'); /* замените на изображение на весь экран */
     background-size: cover;
@@ -29,14 +30,13 @@
 }
 
 .about-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: space-between;
+    align-items: start;
 }
 
 .about-text {
-    flex: 1;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -52,8 +52,6 @@
 }
 
 .about-img {
-    flex: 1;
-    max-width: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -62,4 +60,19 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-about h2 {
+        font-size: 50px;
+    }
+
+    .about-text {
+        padding: 15px;
+    }
+
+    .about-text h2 {
+        font-size: 1.6em;
+    }
 }
