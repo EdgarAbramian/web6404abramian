@@ -1,8 +1,8 @@
-# Название проекта
+# Проекта
 
-![Логотип проекта](./images/logo.png)
+![Логотип проекта](Images/banner-about.jpg)
 
-> Краткое описание проекта в одно-два предложения, передающее его суть и назначение.
+> Сайт бмв
 
 ## Содержание
 
@@ -27,5 +27,5 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/username/project-name.git
+   git clone https://github.com/EdgarAbramian/web6404abramian
    cd project-name
