@@ -1,6 +1,6 @@
 /* Стили для секции "О нас" с использованием CSS Grid */
 .hero-about {
-    background-image: url('../Images/banner-about.jpg'); /* замените на изображение на весь экран */
+    background-image: url('../Images/banner-about.jpg'); 
     background-size: cover;
     background-position: center;
     height: 50vh;

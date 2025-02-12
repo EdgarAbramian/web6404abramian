@@ -44,7 +44,7 @@
         <div class="car-cards" id="car-cards">
             <!-- Карточки автомобилей будут загружены сюда -->
         </div>
-        <div id="error-message" style="color: red; display: none;"></div> <!-- Место для вывода ошибок -->
+        <div id="error-message" style="color: red; display: none;"></div>
         <script>
             async function loadCarCards() {
             const carCardsContainer = document.getElementById('car-cards');
@@ -53,11 +53,11 @@
 
             try {
                 // Отправка асинхронного запроса на сервер для получения карточек автомобилей
-                const response = await fetch('http://localhost:8000/car/cartData'); // Укажите URL для получения данных
+                const response = await fetch('http://localhost:8000/car/cartData'); 
 
                 // Проверка успешности запроса
                 if (!response.ok) {
-                    throw new Error(`Ошибка при запросе: ${response.statusText} (${response.status})`);
+                    throw new Error(`: ${response.statusText} (${response.status})`);
                 }
 
                 // Попытка парсить JSON-ответ
@@ -65,12 +65,12 @@
                 try {
                     data = await response.json();
                 } catch (jsonError) {
-                    throw new Error('Ошибка при разборе данных с сервера');
+                    throw new Error('Error parsing JSON data from the server');
                 }
 
                 // Проверка, что данные имеют правильную структуру
                 if (!Array.isArray(data) || data.length === 0) {
-                    throw new Error('Полученные данные не соответствуют ожидаемому формату');
+                    throw new Error('Wrong Data Format');
                 }
 
                 // Очищаем контейнер перед добавлением новых карточек
@@ -88,7 +88,7 @@
                 });
 
             } catch (error) {
-                console.error('Ошибка при загрузке карточек автомобилей:', error);
+                console.error('Error loading car info :', error);
 
                 // Отображаем сообщение об ошибке на странице
                 errorMessageElement.textContent = `Ошибка: ${error.message}`;

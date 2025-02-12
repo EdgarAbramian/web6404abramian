@@ -56,7 +56,7 @@ nav ul li a:hover {
 
 /* Главный баннер */
 .hero {
-    background-image: url('../Images/banner_new.webp'); /* замените на изображение на весь экран */
+    background-image: url('../Images/banner_new.webp'); 
     background-size: cover;
     background-position: center;
     height: 100vh;

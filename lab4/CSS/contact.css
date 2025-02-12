@@ -1,5 +1,5 @@
 .hero-contact {
-    background-image: url('../Images/banner-contact.jpg'); /* замените на изображение на весь экран */
+    background-image: url('../Images/banner-contact.jpg'); 
     background-size: cover;
     background-position: center;
     height: 100vh;
