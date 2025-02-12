@@ -1,0 +1,80 @@
+.hero-contact {
+    background-image: url('../Images/banner-contact.jpg'); /* замените на изображение на весь экран */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.hero-contact h2 {
+    color: #ffffff;
+    font-size: 70px;
+    margin-bottom: 4%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-details, .contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h2, .contact-form h2 {
+    font-size: 1.8em;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background-color: #111;
+    color: #fff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.contact-form button:hover {
+    background-color: #575757;
+}
