@@ -1,12 +1,12 @@
 function isInteger(n) {
-    return (n | 0) === n;
+    return (n | 0) === n; // n | 0 - битовый оператор ИЛИ, преобразует число в 32-битное целое число
 }
 
-function even() {
-    return Array.from({ length: 10 }, (_, i) => (i + 1) * 2);
+function even() {       // length       callback function 
+    return Array.from({ length: 10 }, (_, i) => (i + 1) * 2); // Создаем массив из 10 элементов, каждый элемент - четное число 
 }
 
-function sumTo(n) {
+function sumTo(n) { // Сумма чисел от 1 до n
     let sum = 0;
     for (let i = 1; i <= n; i++) {
         sum += i;
@@ -14,19 +14,20 @@ function sumTo(n) {
     return sum;
 }
 
-function recSumTo(n) {
+function recSumTo(n) { // Сумма чисел от 1 до n через рекурсию
     return n === 1 ? 1 : n + recSumTo(n - 1);
 }
 
-function factorial(n) {
+function factorial(n) { // Факториал числа n через рекурсию
     return n === 0 ? 1 : n * factorial(n - 1);
 }
 
-function isBinary(n) {
+function isBinary(n) { // Проверка, является ли число степенью двойки
+    //      число > 0 и побитовое И числа и числа - 1 равно 0 елси степень двойки
     return n > 0 && (n & (n - 1)) === 0;
 }
 
-function fibonacci(n) {
+function fibonacci(n) { // Число Фибоначчи через цикл
     if (n <= 1) return n;
     let a = 0, b = 1, temp;
     for (let i = 2; i <= n; i++) {
@@ -37,18 +38,19 @@ function fibonacci(n) {
     return b;
 }
 
-function getOperationFn(initialValue, operatorFn) {
-    let storedValue = initialValue;
+function getOperationFn(initialValue, operatorFn) {  
+    let storedValue = initialValue;  // Инициализация переменной для хранения текущего значения
     return operatorFn
-        ? (newValue) => (storedValue = operatorFn(storedValue, newValue))
-        : () => storedValue;
+        ? (newValue) => (storedValue = operatorFn(storedValue, newValue)) // Если передана operatorFn, выполняем операцию
+        : () => storedValue; // Если operatorFn не передана, возвращаем текущее значение
 }
 
+
 function sequence(start = 0, step = 1) {
-    let current = start - step;
+    let current = start - step; // Начинаем на один шаг "назад"
     return () => {
-        current += step;
-        return current;
+        current += step; // Увеличиваем на step
+        return current;  // Возвращаем текущее значение
     };
 }
 
