@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АвтоЛидер - Главная</title>
     <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/contact.css">
-
+    <link rel="stylesheet" href="../CSS/flex_contacts.css">
 </head>
 
 <body>
     <!-- Шапка сайта -->
     <header>
-
         <div class="header-content">
             <a href="index.html"><img src="../images/logo.png" alt="Логотип АвтоЛидер" class="logo"></a>
             <h1>АвтоЛидер</h1>
@@ -59,56 +57,6 @@
                     <button type="submit">Отправить сообщение</button>
                 </form>
             </div>
-            
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const form = document.getElementById('contactForm');
-            
-                    // Обработчик отправки формы
-                    form.addEventListener('submit', function (event) {
-                        // Предотвращаем отправку формы по умолчанию
-                        event.preventDefault();
-            
-                        // Получение данных формы
-                        const name = form.name.value.trim();
-                        const email = form.email.value.trim();
-                        const message = form.message.value.trim();
-            
-                        // Проверка данных
-                        let errorMessage = '';
-                        if (!name) {
-                            errorMessage += 'Введите ваше имя.\n';
-                        }
-                        if (!validateEmail(email)) {
-                            errorMessage += 'Введите корректный e-mail.\n';
-                        }
-                        if (!message) {
-                            errorMessage += 'Введите сообщение.\n';
-                        }
-            
-                        if (errorMessage) {
-                            alert(errorMessage);
-                            return;
-                        }
-            
-                        // Если проверки пройдены, отправляем форму
-                        alert('Форма отправлена успешно!');
-            
-                        // Эмуляция отправки данных
-                        console.log('Данные формы:', { name, email, message });
-            
-                        // Можно раскомментировать для настоящей отправки формы
-                        // form.submit();
-                    });
-            
-                    // Функция проверки корректности e-mail
-                    function validateEmail(email) {
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        return emailRegex.test(email);
-                    }
-                });
-            </script>
-            
         </div>
     </div>
 
@@ -137,12 +85,11 @@
             </div>
 
             <div class="footer-credits">
-                <h3>Создатель сайта</h3>
+                <h3>Автор сайта</h3>
                 <p><a href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
             </div>
         </div>
     </footer>
-
 </body>
-
+    <script src="../js/formSender.js" defer></script>
 </html>

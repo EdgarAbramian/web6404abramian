@@ -5,92 +5,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АвтоЛидер - Главная</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/about.css">
-
+    <link rel="stylesheet" href="../CSS/grid_about.css">
 </head>
 
 <body>
-    <!-- Шапка сайта -->
-    <header>
-
-        <div class="header-content">
-            <a href="index.html"><img src="../images/logo.png" alt="Логотип АвтоЛидер" class="logo"></a>
-            <h1>АвтоЛидер</h1>
+    <header class="header">
+        <div class="header__content">
+            <a href="index.html"><img src="../images/logo.png" alt="Логотип АвтоЛидер" class="header__logo"></a>
+            <h1 class="header__title">АвтоЛидер</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html">Главная</a></li>
+                    <li class="header__nav-item"><a href="catalog.html">Каталог</a></li>
+                    <li class="header__nav-item"><a href="about.html">О нас</a></li>
+                    <li class="header__nav-item"><a href="contact.html">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Главный баннер -->
     <section class="hero-about">
-        <div class="gradient">
-            <div class="hero-text">
-                <h2>О нас</h2>
+        <div class="hero-about__gradient">
+            <div class="hero-about__text">
+                <h2 class="hero-about__title">О нас</h2>
             </div>
         </div>
     </section>
 
     <div class="container">
+        <div class="about">
+            <div class="about__text">
+                <h2 class="about__title">Наша миссия</h2>
+                <p class="about__description">Мы — официальные дилеры BMW, предоставляющие нашим клиентам самые лучшие автомобили и сервис. С 2005 года мы работаем на рынке, предоставляя исключительное качество и индивидуальный подход. Наша цель — обеспечить вас не только машиной, но и полноценным опытом владения премиум-автомобилем BMW.</p>
 
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Наша миссия</h2>
-                <p>Мы — официальные дилеры BMW, предоставляющие нашим клиентам самые лучшие автомобили и сервис. С 2005 года мы работаем на рынке, предоставляя исключительное качество и индивидуальный подход. Наша цель — обеспечить вас не только машиной, но и полноценным опытом владения премиум-автомобилем BMW.</p>
-
-                <h2>Почему выбирают нас?</h2>
-                <ul>
-                    <li>Официальная гарантия от BMW</li>
-                    <li>Профессиональный и дружелюбный персонал</li>
-                    <li>Широкий ассортимент автомобилей</li>
-                    <li>Специальные предложения и программы лояльности</li>
-                    <li>Поддержка на всех этапах покупки и эксплуатации</li>
+                <h2 class="about__title">Почему выбирают нас?</h2>
+                <ul class="about__list">
+                    <li class="about__list-item">Официальная гарантия от BMW</li>
+                    <li class="about__list-item">Профессиональный и дружелюбный персонал</li>
+                    <li class="about__list-item">Широкий ассортимент автомобилей</li>
+                    <li class="about__list-item">Специальные предложения и программы лояльности</li>
+                    <li class="about__list-item">Поддержка на всех этапах покупки и эксплуатации</li>
                 </ul>
             </div>
 
-            <div class="about-img">
-                <img src="..\Images\logo.png" alt="АвтоЛидер BMW">
+            <div class="about__image">
+                <img src="..\Images\logo.png" alt="АвтоЛидер BMW" class="about__image-img">
             </div>
         </div>
     </div>
 
-    <!-- Футер -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="../images/logo.png" alt="Логотип АвтоЛидер">
-                <p>&copy; 2024 АвтоЛидер. Все права защищены.</p>
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="../images/logo.png" alt="Логотип АвтоЛидер" class="footer__logo-image">
+                <p class="footer__copyright">&copy; 2024 АвтоЛидер. Все права защищены.</p>
             </div>
 
-            <div class="footer-links">
-                <h3>Навигация</h3>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+            <div class="footer__links">
+                <h3 class="footer__title">Навигация</h3>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a href="index.html">Главная</a></li>
+                    <li class="footer__list-item"><a href="catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a href="about.html">О нас</a></li>
+                    <li class="footer__list-item"><a href="contact.html">Контакты</a></li>
                 </ul>
             </div>
 
-            <div class="footer-contacts">
-                <h3>Контакты</h3>
-                <p>Email: info@autolider.com</p>
-                <p>Телефон: +7 (999) 123-45-67</p>
+            <div class="footer__contacts">
+                <h3 class="footer__title">Контакты</h3>
+                <p class="footer__contacts-text">Email: info@autolider.com</p>
+                <p class="footer__contacts-text">Телефон: +7 (999) 123-45-67</p>
             </div>
 
-            <div class="footer-credits">
-                <h3>Создатель сайта</h3>
-                <p><a href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
+            <div class="footer__credits">
+                <h3 class="footer__title">Автор сайта</h3>
+                <p class="footer__credits-text"><a class="footer__link-author" href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>
