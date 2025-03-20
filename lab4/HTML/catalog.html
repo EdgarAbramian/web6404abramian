@@ -7,13 +7,10 @@
     <title>АвтоЛидер - Главная</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/catalog.css">
-
 </head>
 
 <body>
-    <!-- Шапка сайта -->
     <header>
-
         <div class="header-content">
             <a href="index.html"><img src="../images/logo.png" alt="Логотип АвтоЛидер" class="logo"></a>
             <h1>АвтоЛидер</h1>
@@ -28,81 +25,20 @@
         </div>
     </header>
 
-    <!-- Главный баннер -->
     <section class="hero-catalog">
         <div class="gradient">
             <div class="hero-catalog-text">
                 <h2>Каталог</h2>
-
             </div>
         </div>
     </section>
 
-    <!-- Каталог автомобилей -->
     <section class="catalog">
         <h2>Наши модели BMW</h2>
         <div class="car-cards" id="car-cards">
-            <!-- Карточки автомобилей будут загружены сюда -->
         </div>
-        <div id="error-message" style="color: red; display: none;"></div>
-        <script>
-            async function loadCarCards() {
-            const carCardsContainer = document.getElementById('car-cards');
-            const errorMessageElement = document.getElementById('error-message');
-            errorMessageElement.style.display = 'none'; // Скрываем сообщение об ошибке
+        <div id="car-cards-error" style="color: red; display: none;"></div>
 
-            try {
-                // Отправка асинхронного запроса на сервер для получения карточек автомобилей
-                const response = await fetch('http://localhost:8000/car/cartData'); 
-
-                // Проверка успешности запроса
-                if (!response.ok) {
-                    throw new Error(`: ${response.statusText} (${response.status})`);
-                }
-
-                // Попытка парсить JSON-ответ
-                let data;
-                try {
-                    data = await response.json();
-                } catch (jsonError) {
-                    throw new Error('Error parsing JSON data from the server');
-                }
-
-                // Проверка, что данные имеют правильную структуру
-                if (!Array.isArray(data) || data.length === 0) {
-                    throw new Error('Wrong Data Format');
-                }
-
-                // Очищаем контейнер перед добавлением новых карточек
-                carCardsContainer.innerHTML = '';
-
-                // Создание и добавление карточек автомобилей
-                data.forEach(car => {
-                    const card = document.createElement('div');
-                    card.classList.add('car-card');
-                    card.innerHTML = `
-                        <img src="${car.image}" alt="${car.alt}">
-                        <h3>${car.model}</h3>
-                    `;
-                    carCardsContainer.appendChild(card);
-                });
-
-            } catch (error) {
-                console.error('Error loading car info :', error);
-
-                // Отображаем сообщение об ошибке на странице
-                errorMessageElement.textContent = `Ошибка: ${error.message}`;
-                errorMessageElement.style.display = 'block'; // Показываем сообщение об ошибке
-            }
-        }
-
-        // Загружаем карточки при загрузке страницы
-        window.onload = loadCarCards;
-
-        </script>
-
-
-        <!-- Таблица с характеристиками -->
         <table class="car-specs">
             <thead>
                 <tr>
@@ -114,101 +50,115 @@
                 </tr>
             </thead>
             <tbody id="car-specs-body">
-                <!-- Данные будут загружены сюда -->
             </tbody>
         </table>
-        <div id="error-message" style="color: red; display: none;"></div>
-
-        <script>
-            async function loadCarSpecs() {
-                const errorMessageElement = document.getElementById('error-message'); // Элемент для вывода ошибок
-                errorMessageElement.style.display = 'none'; // Скрываем сообщения об ошибках
-
-                try {
-                    // Отправка асинхронного запроса на сервер
-                    const response = await fetch('http://localhost:8000/car/carTabl'); 
-
-                    // Проверка успешности запроса (HTTP-статус 2xx)
-                    if (!response.ok) {
-                        throw new Error(`Ошибка при запросе: ${response.statusText} (${response.status})`);
-                    }
-
-                    // Попытка парсить JSON-ответ
-                    let data;
-                    try {
-                        data = await response.json();
-                    } catch (jsonError) {
-                        throw new Error('Ошибка при разборе данных с сервера');
-                    }
-
-                    // Проверка, что данные имеют правильную структуру
-                    if (!Array.isArray(data) || data.length === 0) {
-                        throw new Error('Полученные данные не соответствуют ожидаемому формату');
-                    }
-
-                    // Очистка таблицы перед загрузкой новых данных
-                    const tbody = document.getElementById('car-specs-body');
-                    tbody.innerHTML = '';
-
-                    
-                    data.forEach(car => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${car.model}</td>
-                            <td>${car.engine}</td>
-                            <td>${car.power}</td>
-                            <td>${car.acceleration}</td>
-                            <td>${car.price}</td>`;
-                        tbody.appendChild(row);
-                    });
-                } catch (error) {
-                    console.error('Ошибка при загрузке данных:', error);
-
-                    // Отображаем сообщение об ошибке 
-                    errorMessageElement.textContent = `Ошибка: ${error.message}`;
-                    errorMessageElement.style.display = 'block'; //  сообщение об ошибке
-                }
-            }
-
-            // Загружаем данные при загрузке страницы
-            window.onload = loadCarSpecs;
-
-        </script>
-
-
-
+        <div id="car-specs-error" style="color: red; display: none;"></div>
     </section>
-        <!-- Футер -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../images/logo.png" alt="Логотип АвтоЛидер">
-                    <p>&copy; 2024 АвтоЛидер. Все права защищены.</p>
-                </div>
 
-                <div class="footer-links">
-                    <h3>Навигация</h3>
-                    <ul>
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="contact.html">Контакты</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contacts">
-                    <h3>Контакты</h3>
-                    <p>Email: info@autolider.com</p>
-                    <p>Телефон: +7 (999) 123-45-67</p>
-                </div>
-
-                <div class="footer-credits">
-                    <h3>Автор сайта</h3>
-                    <p><a href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="../images/logo.png" alt="Логотип АвтоЛидер">
+                <p>&copy; 2024 АвтоЛидер. Все права защищены.</p>
             </div>
-        </footer>
+            <div class="footer-links">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-contacts">
+                <h3>Контакты</h3>
+                <p>Email: info@autolider.com</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+            <div class="footer-credits">
+                <h3>Автор сайта</h3>
+                <p><a href="https://t.me/EdgarAbram">Edgar Abramian</a></p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        async function loadCarCards() {
+            const carCardsContainer = document.getElementById('car-cards');
+            const errorMessageElement = document.getElementById('car-cards-error');
+            errorMessageElement.style.display = 'none';
+
+            try {
+                const response = await fetch('http://localhost:3000/car/cartData');
+                if (!response.ok) {
+                    throw new Error(`Ошибка: ${response.statusText} (${response.status})`);
+                }
+
+                const data = (await response.json()).data;
+                console.log('Данные карточек:', data); // Логирование данных
+
+                if (!Array.isArray(data) || data.length === 0) {
+                    throw new Error('Неверный формат данных карточек');
+                }
+
+                carCardsContainer.innerHTML = '';
+                data.forEach(car => {
+                    const card = document.createElement('div');
+                    card.classList.add('car-card');
+                    card.innerHTML = `
+                        <img src="${car.image}" alt="${car.alt}">
+                        <h3>${car.model}</h3>
+                    `;
+                    carCardsContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки карточек:', error);
+                errorMessageElement.textContent = error.message;
+                errorMessageElement.style.display = 'block';
+            }
+        }
+
+        async function loadCarSpecs() {
+            const tbody = document.getElementById('car-specs-body');
+            const errorMessageElement = document.getElementById('car-specs-error');
+            errorMessageElement.style.display = 'none';
+
+            try {
+                const response = await fetch('http://localhost:3000/car/carTabl');
+                if (!response.ok) {
+                    throw new Error(`Ошибка: ${response.statusText} (${response.status})`);
+                }
+
+                const data = (await response.json()).data;
+                console.log('Данные таблицы:', data); // Логирование данных
+                if (!Array.isArray(data) || data.length === 0) {
+                    throw new Error('Неверный формат данных таблицы');
+                }
+
+                tbody.innerHTML = '';
+                data.forEach(car => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${car.model}</td>
+                        <td>${car.engine}</td>
+                        <td>${car.power}</td>
+                        <td>${car.acceleration}</td>
+                        <td>${car.price}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки таблицы:', error);
+                errorMessageElement.textContent = error.message;
+                errorMessageElement.style.display = 'block';
+            }
+        }
+
+        window.onload = async () => {
+            await loadCarCards();
+            await loadCarSpecs();
+        };
+    </script>
 </body>
 
 </html>
