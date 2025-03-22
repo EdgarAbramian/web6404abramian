@@ -11,6 +11,7 @@ function isInteger(n) {
  */
 function even() {       // length       callback function 
     return Array.from({ length: 10 }, (_, i) => (i + 1) * 2); // Создаем массив из 10 элементов, каждый элемент - четное число 
+    //  i - индекс элемента, начиная с 0, _ - не используемый параметр значение из массива
 }
 
 /**
@@ -103,7 +104,7 @@ function sequence(start = 0, step = 1) {
     let current = start - step; // Начинаем на один шаг "назад"
     return () => {
         current += step; // Увеличиваем на step
-        return current;  // Возвращаем текущее значение
+        return current;  // Возвращаем текущее значение 
     };
 }
 
