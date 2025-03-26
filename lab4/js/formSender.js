@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Отправка данных с помощью Fetch API
-        fetch('/submit_form', {
+        fetch('http://127.0.0.1:3000/submit_form', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 form.reset(); 
             })
             .catch(error => {
-                console.error('Ошибка:', error);
                 alert('Произошла ошибка при отправке формы. Попробуйте позже.');
             });
     });

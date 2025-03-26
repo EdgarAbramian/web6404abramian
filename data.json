@@ -1,74 +1,95 @@
 {
-    "/car/cartData": {
-        "get": {
-            "data": [
-                {
-                    "image": "../images/bmw1.jpg",
-                    "alt": "BMW X5",
-                    "model": "BMW X5"
-                  },
-                  {
-                    "image": "../images/bmw1.jpg",
-                    "alt": "BMW M5",
-                    "model": "BMW M5"
-                  },
-                  {
-                    "image": "../images/bmw3.jpg",
-                    "alt": "BMW 3 Series",
-                    "model": "BMW 3 Series"
-                  },
-                  {
-                    "image": "../images/bmw4.jpg",
-                    "alt": "BMW i8",
-                    "model": "BMW i8"
-                  },
-                  {
-                    "image": "../images/bmw5.jpg",
-                    "alt": "BMW X7",
-                    "model": "BMW X7"
-                  }
-            ]
+  "/car/cartData": {
+    "get": {
+      "data": [
+        {
+          "image": "../images/bmw1.jpg",
+          "alt": "BMW X5",
+          "model": "BMW X5"
+        },
+        {
+          "image": "../images/bmw1.jpg",
+          "alt": "BMW M5",
+          "model": "BMW M5"
+        },
+        {
+          "image": "../images/bmw3.jpg",
+          "alt": "BMW 3 Series",
+          "model": "BMW 3 Series"
+        },
+        {
+          "image": "../images/bmw4.jpg",
+          "alt": "BMW i8",
+          "model": "BMW i8"
+        },
+        {
+          "image": "../images/bmw5.jpg",
+          "alt": "BMW X7",
+          "model": "BMW X7"
         }
-    },
-    "/car/carTabl": {
-        "get": {
-            "data": [
-                {
-                    "model": "BMW X5",
-                    "engine": "3.0L Turbo",
-                    "power": "335 л.с.",
-                    "acceleration": "5.3 сек",
-                    "price": "$60,000"
-                  },
-                  {
-                    "model": "BMW M5",
-                    "engine": "4.4L V8 Turbo",
-                    "power": "600 л.с.",
-                    "acceleration": "3.2 сек",
-                    "price": "$110,000"
-                  },
-                  {
-                    "model": "BMW 3 Series",
-                    "engine": "2.0L Turbo",
-                    "power": "255 л.с.",
-                    "acceleration": "5.6 сек",
-                    "price": "$40,000"
-                  },
-                  {
-                    "model": "BMW i8",
-                    "engine": "1.5L Hybrid",
-                    "power": "369 л.с.",
-                    "acceleration": "4.2 сек",
-                    "price": "$140,000"
-                  },
-                  {
-                    "model": "BMW X7",
-                    "engine": "4.4L V8 Turbo",
-                    "power": "523 л.с.",
-                    "acceleration": "4.5 сек",
-                    "price": "$90,000"
-                  }
-            ]
-        }
+      ]
     }
+  },
+
+
+  "/submit_form": {
+    "post": {
+      "description": "Форма обратной связи для пользователй",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "example": {
+              "name": "Edgar",
+              "email": "edgar.abramian@abrit.ru",
+              "message": "Some message Here"
+            }
+          }
+        }
+      }
+    }
+  },
+
+
+  "/car/carTabl": {
+    "get": {
+      "data": [
+        {
+          "model": "BMW X5",
+          "engine": "3.0L Turbo",
+          "power": "335 л.с.",
+          "acceleration": "5.3 сек",
+          "price": "$60,000"
+        },
+        {
+          "model": "BMW M5",
+          "engine": "4.4L V8 Turbo",
+          "power": "600 л.с.",
+          "acceleration": "3.2 сек",
+          "price": "$110,000"
+        },
+        {
+          "model": "BMW 3 Series",
+          "engine": "2.0L Turbo",
+          "power": "255 л.с.",
+          "acceleration": "5.6 сек",
+          "price": "$40,000"
+        },
+        {
+          "model": "BMW i8",
+          "engine": "1.5L Hybrid",
+          "power": "369 л.с.",
+          "acceleration": "4.2 сек",
+          "price": "$140,000"
+        },
+        {
+          "model": "BMW X7",
+          "engine": "4.4L V8 Turbo",
+          "power": "523 л.с.",
+          "acceleration": "4.5 сек",
+          "price": "$90,000"
+        }
+      ]
+    }
+  }
 }
