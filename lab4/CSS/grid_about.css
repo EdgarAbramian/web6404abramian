@@ -215,31 +215,6 @@ body {
     color: #ffffff;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .header__content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header__nav-list {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-about__title {
-        font-size: 28px;
-    }
-
-    .about__title {
-        font-size: 24px;
-    }
-
-    .about__text {
-        font-size: 16px;
-    }
-}
-
 .hero-text {
     margin: 3%;
     opacity: 0; /* текст изначально не виден */
