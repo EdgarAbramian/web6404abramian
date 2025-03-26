@@ -4,7 +4,8 @@ test/grid/grid.css
 test/grid/grid.html
 ./idea
 ./test
-./lab3/node_modules
+lab3/node_modules/
+lab3/package.json
 test/table/table.css
 test/table/table.html
 test/grid/style.css
@@ -12,3 +13,4 @@ test/grid/index.html
 test/DomBom/DomBom.js
 test/DomBom/DomBom.html
 test/DomBom/DomBom.css
+
